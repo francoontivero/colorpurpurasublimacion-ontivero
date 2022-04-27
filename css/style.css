@@ -1,0 +1,500 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+/* Background general de sitio */
+body{
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 21%, rgba(179,179,179,1) 64%, rgba(0,0,0,1) 100%);
+}
+
+/* Menú principal de página */
+.grid-container-nav{
+    display: grid;
+    grid-template-columns: repeat (5, 100%)
+    grid-template-rows: repeat (1, 100%)
+    gap: 1px;
+    grid-template-areas: 
+    "index-menu productos-menu diseños-menu nosotros-menu contacto-menu carrito-de-compras";
+}
+.index-menu{
+    grid-area: index-menu;
+    display: flex;
+    justify-content: center;
+}
+.productos-menu{
+    grid-area: productos-menu;
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+}
+.diseños-menu{
+    grid-area: diseños-menu;
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+}
+.nosotros-menu{
+    grid-area: nosotros-menu;
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+}
+.contacto-menu{
+    grid-area: contacto-menu;
+    display: flex;
+    justify-content:flex-start;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+nav a{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    background-color: white;
+    text-decoration: none;
+    text-align: center;
+    border: 2px none;
+    margin: 15px;
+    padding: 10px;
+    font-family: 'PT Sans', sans-serif; color: black;
+}
+nav a:hover{
+    color: grey;
+}
+nav .carrito-de-compras{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    grid-area: carrito-de-compras;
+    padding: 10px;
+    margin: 10px;
+    border: 1px outset ;
+}
+/* Index */
+.grid-container-index{
+    display: grid;
+    display: flex;
+    flex-wrap: wrap;
+    grid-template-columns: (3, 100%);
+    grid-template-rows: (1, 100%);
+    grid-template-areas: "producto1 logocentral producto2"
+}
+
+.producto1{
+    grid-area: producto1;
+    margin: 75px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+#logocentral{
+    animation-name: animacionlogo;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+    grid-area: logocentral;
+    margin: 135px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;;
+    position: sticky;
+}
+@keyframes animacionlogo{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{transform: rotate(360deg);
+    }
+}
+.producto2{
+    grid-area: producto2;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    
+}
+.nombreproducto-precio{
+    font-family: 'PT Sans', sans-serif; color: black;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    font-size: 20px;
+}
+/* Página - Productos */
+.productos{
+    background: rgb(255,255,255);
+background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(249,154,245,1) 47%, rgba(129,227,252,1) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: groove black;
+    background-color: #f0edff;
+    text-align: center;
+    font-family: 'PT Sans', sans-serif;
+    margin: 50px 20px 50px 20px;
+    padding: 30px;
+}
+/* Página - Diseños */
+.texto-generico-disenos{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-image: url(../resources/merch.png);
+    width: 800px;
+    height: 430px;
+    background-position-y: bottom;
+    text-align: center;
+    margin: 300px; 
+    font-size: 50px;
+    font-family: 'Poppins', sans-serif;
+}
+/* Página - Nosotros */
+.conocenos{
+    background: rgb(255,255,255);
+background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(249,154,245,1) 47%, rgba(129,227,252,1) 100%);
+    margin: 50px 40px 30px;
+    border: outset 1px #5b5480;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  
+    align-items: center;
+    box-shadow: 3px 3px #5b5480;
+}
+.conocenos-titulo{
+    text-align: center;
+    margin: 50px 15px 15px 15px;
+    font-size: 50px;
+    font-family: 'Poppins', sans-serif;
+}
+.conocenos-p{
+    text-align: center;
+    font-family: 'PT Sans', sans-serif;
+    margin: 50px 70px;
+}
+/* Página - Contacto */
+.contactanos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    margin: 50px 15px 15px 15px;
+    font-size: 50px;
+    font-family: 'Poppins', sans-serif;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 50px;
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+}
+.datos-formulario {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+/* Pie de página */
+.grid-container-footer{
+    display: grid;
+    flex-wrap: nowrap;
+    grid-template-columns: (2, 100%);
+    grid-template-rows: (3, 100%);
+    grid-template-areas: 
+    "pie-de-pagina pie-de-pagina pie-de-pagina"
+    "facebook-logo instagram-logo whatsapp-logo";
+}
+.pie-de-pagina{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    grid-area: pie-de-pagina;
+}
+.facebook-logo{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    grid-area: facebook-logo;
+}
+.instagram-logo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    grid-area: instagram-logo;
+}
+.whastapp-logo{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    grid-area: whatsapp-logo;
+}
+footer {
+    margin-top: 50px;
+    font-family: 'PT Sans', sans-serif;
+}
+/* Mobile */
+@media screen and (max-width: 360px){
+    .grid-container-nav{
+        display: grid;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        grid-template-columns: repeat (5, 100%)
+        grid-template-rows: repeat (1, 100%)
+        gap: 1px;
+        grid-template-areas: 
+        "index-menu productos-menu diseños-menu nosotros-menu contacto-menu carrito-de-compras";
+    }
+    .index-menu{
+        grid-area: index-menu;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .productos-menu{
+        grid-area: productos-menu;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content:flex-start;
+        align-items: center;
+    }
+    .diseños-menu{
+        grid-area: diseños-menu;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content:flex-start;
+        align-items: center;
+    }
+    .nosotros-menu{
+        grid-area: nosotros-menu;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content:flex-start;
+        align-items: center;
+    }
+    .contacto-menu{
+        grid-area: contacto-menu;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content:flex-start;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    
+    nav a{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        background-color: white;
+        text-decoration: none;
+        text-align: center;
+        border: 2px none;
+        margin: 15px;
+        padding: 10px;
+        font-family: 'PT Sans', sans-serif; color: black;
+    }
+    nav .carrito-de-compras{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        grid-area: carrito-de-compras;
+        padding: 10px;
+        margin: 10px;
+        border: 1px outset ;
+    }
+    /* Index */
+    .grid-container-index{
+        display: grid;
+        flex-wrap: wrap;
+        grid-template-columns: (1, 50%);
+        grid-template-rows: (3, 100%);
+        grid-template-areas: 
+        "logocentral"
+        "producto1"
+        "producto2"
+    }
+    
+    .producto1{
+        grid-area: producto1;
+        margin: 30px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    #logocentral{
+        grid-area: logocentral;
+        margin: 30px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items:flex-start;
+        position: sticky;
+        width: 300px;  
+        height: 300px;
+        }
+    .producto2{
+        grid-area: producto2;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .nombreproducto-precio{
+        font-family: 'PT Sans', sans-serif; color: black;
+        text-align: center;
+        margin-bottom: 20px;
+        padding: 15px;
+        font-size: 20px;
+    }
+    /* Página - Productos */
+    .productos{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: groove black;
+        background-color: #f0edff;
+        text-align: center;
+        font-family: 'PT Sans', sans-serif;
+        margin: 50px 20px 50px 20px;
+        padding: 30px;
+    }
+    /* Página - Diseños */
+    .texto-generico-disenos{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        background-image: url(../resources/merch.png);
+        width: 360px;
+        height: 780px;
+        background-position-y: bottom;
+        text-align: center;
+        margin: 10px; 
+        font-size: 50px;
+        font-family: 'Poppins', sans-serif;
+    }
+    /* Página - Nosotros */
+    .conocenos{
+        margin: 50px 40px 30px;
+        border: outset 1px #5b5480;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;  
+        align-items: center;
+        box-shadow: 3px 3px #5b5480;
+    }
+    .conocenos-titulo{
+        text-align: center;
+        margin: 50px 15px 15px 15px;
+        font-size: 50px;
+        font-family: 'Poppins', sans-serif;
+    }
+    .conocenos-p{
+        text-align: center;
+        font-family: 'PT Sans', sans-serif;
+        margin: 50px 70px;
+    }
+    /* Página - Contacto */
+    .contactanos{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        margin: 50px 15px 15px 15px;
+        font-size: 50px;
+        font-family: 'Poppins', sans-serif;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-top: 50px;
+        font-family: 'Poppins', sans-serif;
+        width: 100%;
+        height: 500px;
+    }
+    .datos-formulario {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    /* Pie de página */
+    .grid-container-footer{
+        display: grid;
+        flex-wrap: wrap;
+        grid-template-columns: (2, 100%);
+        grid-template-rows: (3, 100%);
+        grid-template-areas: 
+        "pie-de-pagina pie-de-pagina pie-de-pagina"
+        "facebook-logo instagram-logo whatsapp-logo";
+    }
+    .pie-de-pagina{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        grid-area: pie-de-pagina;
+    }
+    .facebook-logo{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-end;
+        grid-area: facebook-logo;
+    }
+    .instagram-logo {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        grid-area: instagram-logo;
+    }
+    .whastapp-logo{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        grid-area: whatsapp-logo;
+    }
+    footer {
+        margin-top: 50px;
+        font-family: 'PT Sans', sans-serif;
+    }
+
+    
+}
