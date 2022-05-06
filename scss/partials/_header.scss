@@ -1,0 +1,16 @@
+header{
+    background-color: white;
+    nav{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        a{
+        border: 2px none;
+        margin: 15px;
+        padding: 10px;
+        font-size: 15px;
+        font-family: 'PT Sans', sans-serif; 
+        color: black;
+        }
+    }
+}

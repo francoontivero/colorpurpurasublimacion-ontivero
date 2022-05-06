@@ -1,0 +1,213 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&display=swap");
+header {
+  background-color: white; }
+  header nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; }
+    header nav a {
+      border: 2px none;
+      margin: 15px;
+      padding: 10px;
+      font-size: 15px;
+      font-family: 'PT Sans', sans-serif;
+      color: black; }
+
+footer {
+  margin-top: 50px; }
+  footer p {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    font-family: 'PT Sans', sans-serif;
+    grid-area: pie-de-pagina;
+    color: black; }
+    footer p:hover {
+      color: whitesmoke; }
+  footer a {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap; }
+  footer .facebook-logo {
+    justify-content: flex-end;
+    grid-area: facebook-logo; }
+  footer .instagram-logo {
+    justify-content: center;
+    grid-area: instagram-logo; }
+  footer .whastapp-logo {
+    justify-content: flex-start;
+    grid-area: whatsapp-logo; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+/* Background general de sitio */
+body {
+  background: white;
+  background: linear-gradient(180deg, white 21%, #b3b3b3 64%, black 100%); }
+
+/* Index */
+.grid-container-index {
+  display: grid;
+  display: flex;
+  flex-wrap: wrap;
+  grid-template-columns: 3, 100%;
+  grid-template-rows: 1, 100%;
+  grid-template-areas: "producto1 logocentral producto2"; }
+
+.producto1 {
+  animation: fadeInUp;
+  animation-duration: 1s;
+  animation-iteration-count: initial;
+  animation-delay: 0s;
+  grid-area: producto1;
+  margin: 65px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center; }
+
+#logocentral {
+  animation-name: animacionlogo;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-delay: 1s;
+  grid-area: logocentral;
+  margin: 130px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  position: sticky; }
+
+@keyframes animacionlogo {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
+.producto2 {
+  animation: fadeInUp;
+  animation-duration: 1s;
+  animation-iteration-count: initial;
+  animation-delay: 0s;
+  grid-area: producto2;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center; }
+
+.nombreproducto-precio {
+  font-family: 'PT Sans', sans-serif;
+  color: black;
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 15px;
+  font-size: 20px; }
+
+/* Página - Productos */
+.productos {
+  animation: flipInX;
+  animation-duration: 1s;
+  animation-iteration-count: initial;
+  animation-delay: 0s;
+  background: white;
+  background: radial-gradient(circle, white 0%, #f99af5 47%, #81e3fc 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: groove black;
+  background-color: #f0edff;
+  text-align: center;
+  font-family: 'PT Sans', sans-serif;
+  margin: 50px 20px 50px 20px;
+  padding: 30px; }
+
+/* Página - Diseños */
+.texto-generico-disenos {
+  animation: fadeIn;
+  animation-duration: 3s;
+  animation-iteration-count: initial;
+  animation-delay: 0s;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-image: url(../resources/merch.png);
+  width: 800px;
+  height: 430px;
+  background-position-y: bottom;
+  text-align: center;
+  margin: 300px;
+  font-size: 50px;
+  font-family: 'Poppins', sans-serif; }
+
+/* Página - Nosotros */
+.conocenos {
+  animation: fadeInDownBig;
+  animation-duration: 1s;
+  animation-iteration-count: initial;
+  animation-delay: 0s;
+  background: white;
+  background: radial-gradient(circle, white 0%, #f99af5 47%, #81e3fc 100%);
+  margin: 100px;
+  border: outset 1px #5b5480;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 3px 3px #5b5480; }
+
+.conocenos-titulo {
+  text-align: center;
+  margin: 50px 15px 15px 15px;
+  font-size: 50px;
+  font-family: 'Poppins', sans-serif; }
+
+.conocenos-p {
+  text-align: center;
+  font-family: 'PT Sans', sans-serif;
+  margin: 50px 70px; }
+
+/* Página - Contacto */
+.contactanos {
+  animation: fadeInUp;
+  animation-duration: 1s;
+  animation-iteration-count: initial;
+  animation-delay: 0s;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  margin: 50px 15px 15px 15px;
+  font-size: 50px;
+  font-family: 'Poppins', sans-serif; }
+
+form {
+  animation: fadeIn;
+  animation-duration: 2s;
+  animation-iteration-count: initial;
+  animation-delay: 0s;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 50px;
+  font-family: 'Poppins', sans-serif;
+  width: 100%; }
+
+/* Pie de página */
+.grid-container-footer {
+  display: grid;
+  flex-wrap: nowrap;
+  grid-template-columns: 2, 100%;
+  grid-template-rows: 3, 30%;
+  grid-template-areas: "pie-de-pagina pie-de-pagina pie-de-pagina" "facebook-logo instagram-logo whatsapp-logo"; }

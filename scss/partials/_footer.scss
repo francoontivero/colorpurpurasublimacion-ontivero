@@ -1,0 +1,30 @@
+footer {
+    margin-top: 50px;
+    p{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        font-family: 'PT Sans', sans-serif;
+        grid-area: pie-de-pagina;
+        color: black;
+        &:hover{color: whitesmoke;}
+    }
+    a{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    }
+.facebook-logo{
+    justify-content: flex-end;
+    grid-area: facebook-logo;
+}
+.instagram-logo {
+    justify-content: center;
+    grid-area: instagram-logo;
+}
+.whastapp-logo{
+    justify-content: flex-start;
+    grid-area: whatsapp-logo;
+}
+}
