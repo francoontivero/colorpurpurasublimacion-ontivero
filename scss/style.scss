@@ -21,17 +21,10 @@ body{
     grid-template-areas: "producto1 logocentral producto2"
 }
 .producto1{
-    animation: fadeInUp;
-    animation-duration: 1s;
-    animation-iteration-count: initial;
-    animation-delay: 0s;
+    @include animacion-producto;
     grid-area: producto1;
     margin: 65px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    @include flex-producto;
 }
 #logocentral{
     animation-name: animacionlogo;
@@ -40,11 +33,7 @@ body{
     animation-delay: 1s;
     grid-area: logocentral;
     margin: 130px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;;
+    @include flex-producto;
     position: sticky;
 }
 @keyframes animacionlogo{
@@ -55,61 +44,53 @@ body{
     }
 }
 .producto2{
-    animation: fadeInUp;
-    animation-duration: 1s;
-    animation-iteration-count: initial;
-    animation-delay: 0s;
+    @include animacion-producto;
     grid-area: producto2;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    
+    @include flex-producto;
 }
 .nombreproducto-precio{
-    font-family: 'PT Sans', sans-serif; color: black;
-    text-align: center;
+    color: mag-get($texto, color);
+    font-family: map-get($texto, letra1);
+    font-size: map-get($texto, sizepc);
     margin-bottom: 20px;
     padding: 15px;
-    font-size: 20px;
+    text-align: $alinear-al-centro;
 }
 /* Página - Productos */
+.titulo-productos{
+    text-align: map-get($texto, centro);
+    font-family: map-get($texto, letra2);
+    margin: 50px 15px 15px 15px;
+    font-size: 50px;
+}
 .productos{
     animation: flipInX;
     animation-duration: 1s;
     animation-iteration-count: initial;
     animation-delay: 0s;
-    background: rgb(255,255,255);
-    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(249,154,245,1) 47%, rgba(129,227,252,1) 100%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include background-gradiente;
+    @include flex-producto;
     border: groove black;
-    background-color: #f0edff;
-    text-align: center;
-    font-family: 'PT Sans', sans-serif;
+    text-align: map-get($texto, centro);
+    font-family: map-get($texto, letra1);
+    color: map-get($texto, color);
     margin: 50px 20px 50px 20px;
     padding: 30px;
 }
 /* Página - Diseños */
 .texto-generico-disenos{
-    animation: fadeIn;
-    animation-duration: 3s;
-    animation-iteration-count: initial;
-    animation-delay: 0s;
-    display: flex;
+    @include animacion-aparecer;
+    @include flex-centrar;
     flex-direction: column;
     flex-wrap: wrap;
-    justify-content: center;
     background-image: url(../resources/merch.png);
     width: 800px;
     height: 430px;
     background-position-y: bottom;
-    text-align: center;
     margin: 300px; 
     font-size: 50px;
-    font-family: 'Poppins', sans-serif;
+    font-family: map-get($texto, letra2);
+    text-align: map-get($texto, centro);
 }
 /* Página - Nosotros */
 .conocenos{
@@ -117,25 +98,21 @@ body{
     animation-duration: 1s;
     animation-iteration-count: initial;
     animation-delay: 0s;
-    background: rgb(255,255,255);
-background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(249,154,245,1) 47%, rgba(129,227,252,1) 100%);
+    @include background-gradiente;
     margin: 100px;
     border: outset 1px #5b5480;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;  
-    align-items: center;
+    @include flex-producto;
     box-shadow: 3px 3px #5b5480;
 }
 .conocenos-titulo{
-    text-align: center;
+    text-align: map-get($texto, centro);
+    font-family: map-get($texto, letra2);
     margin: 50px 15px 15px 15px;
     font-size: 50px;
-    font-family: 'Poppins', sans-serif;
 }
 .conocenos-p{
-    text-align: center;
-    font-family: 'PT Sans', sans-serif;
+    text-align: map-get($texto, centro);
+    font-family: map-get($texto, letra1);
     margin: 50px 70px;
 }
 
@@ -145,26 +122,19 @@ background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(249,154,245,1) 
     animation-duration: 1s;
     animation-iteration-count: initial;
     animation-delay: 0s;
-    display: flex;
+    @include flex-centrar;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
+    text-align: map-get($texto, centro);
     margin: 50px 15px 15px 15px;
     font-size: 50px;
-    font-family: 'Poppins', sans-serif;
+    font-family: map-get($texto, letra2);
 }
 form {
-    animation: fadeIn;
-    animation-duration: 2s;
-    animation-iteration-count: initial;
-    animation-delay: 0s;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
+    @include animacion-aparecer;
+    @include flex-producto;
     margin-top: 50px;
-    font-family: 'Poppins', sans-serif;
+    font-family: map-get($texto, letra2);
     width: 100%;
 }
 /* Pie de página */
@@ -176,4 +146,122 @@ form {
     grid-template-areas: 
     "pie-de-pagina pie-de-pagina pie-de-pagina"
     "facebook-logo instagram-logo whatsapp-logo";
+}
+@media screen and (max-width: 400px) {
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    /* Background general de sitio */
+    body{
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 21%, rgba(179,179,179,1) 64%, rgba(0,0,0,1) 100%);
+    }
+    .grid-container-index{
+        display: grid;
+        flex-wrap: wrap;
+        grid-template-columns: (1, 50%);
+        grid-template-rows: (3, 100%);
+        grid-template-areas: 
+        "logocentral"
+        "producto1"
+        "producto2"
+    }
+    .producto1{
+        @include animacion-producto;
+        grid-area: producto1;
+        margin: 30px;
+        @include flex-producto;
+    }
+    #logocentral{
+        animation-name: animacionlogo;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+        animation-delay: 1s;
+        grid-area: logocentral;
+        margin: 30px;
+        @include flex-producto;
+        position: sticky;
+    }
+    @keyframes animacionlogo{
+        0%{
+            transform: rotate(0deg);
+        }
+        100%{transform: rotate(360deg);
+        }
+    }
+    .producto2{
+        @include animacion-producto;
+        grid-area: producto2;
+        @include flex-producto;
+    }
+    .nombreproducto-precio{
+        color: mag-get($texto, color);
+        font-family: map-get($texto, letra1);
+        font-size: map-get($texto, sizepc);
+        margin-bottom: 20px;
+        padding: 15px;
+        text-align: $alinear-al-centro;
+    }
+    /* Página - Productos */
+    .titulo-productos{
+        text-align: map-get($texto, centro);
+        font-family: map-get($texto, letra2);
+        margin: 50px 15px 15px 15px;
+        font-size: 50px;
+    }
+    .productos{
+        animation: flipInX;
+        animation-duration: 1s;
+        animation-iteration-count: initial;
+        animation-delay: 0s;
+        @include background-gradiente;
+        @include flex-producto;
+        border: groove black;
+        text-align: map-get($texto, centro);
+        font-family: map-get($texto, letra1);
+        color: map-get($texto, color);
+        margin: 50px 20px 50px 20px;
+        padding: 20px;
+    }
+    /* Página - Diseños */
+    .texto-generico-disenos{
+        @include animacion-aparecer;
+        @include flex-centrar;
+        flex-direction: column;
+        flex-wrap: wrap;
+        background-image: url(../resources/merch.png);
+        width: 360px;
+        height: 780px;
+        background-position-y: bottom;
+        margin: 23px; 
+        font-size: 50px;
+        font-family: map-get($texto, letra2);
+        text-align: map-get($texto, centro);
+    }
+    /* Página - Nosotros */
+    .conocenos{
+        animation: fadeInDownBig;
+        animation-duration: 1s;
+        animation-iteration-count: initial;
+        animation-delay: 0s;
+        @include background-gradiente;
+        margin: 50px 20px 50px 20px;
+        padding: 50px;
+        border: outset 1px #5b5480;
+        @include flex-producto;
+        box-shadow: 3px 3px #5b5480;
+    }
+    .conocenos-titulo{
+        text-align: map-get($texto, centro);
+        font-family: map-get($texto, letra2);
+        margin: 50px 15px 15px 15px;
+        font-size: 40px;
+    }
+    .conocenos-p{
+        text-align: map-get($texto, centro);
+        font-family: map-get($texto, letra1);
+        margin: 50px 30px;
+    }
+
 }

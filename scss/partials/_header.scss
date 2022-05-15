@@ -1,16 +1,20 @@
+@import "../variables/variables";
+@import "../sass2/extend";
+@import "../sass2/maps";
+@import "../sass2/mixins";
 header{
+    @extend .header-footer;
     background-color: white;
     nav{
         display: flex;
         flex-direction: row;
-        flex-wrap: wrap;
         a{
         border: 2px none;
         margin: 15px;
         padding: 10px;
-        font-size: 15px;
-        font-family: 'PT Sans', sans-serif; 
-        color: black;
+        // font-size: 15px;
+        // font-family: 'PT Sans', sans-serif; 
+        // color: black;
         }
     }
 }

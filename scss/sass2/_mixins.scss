@@ -1,0 +1,34 @@
+@import "../variables/variables";
+
+@mixin flex-centrar{
+    display: flex;
+    justify-content: center;
+}
+
+@mixin flex-producto{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin animacion-producto{
+    animation: fadeInUp;
+    animation-duration: 1s;
+    animation-iteration-count: initial;
+    animation-delay: 0s;
+}
+
+@mixin animacion-aparecer{
+    animation: fadeIn;
+    animation-duration: 2s;
+    animation-iteration-count: initial;
+    animation-delay: 0s;
+}
+
+@mixin background-gradiente{
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(249,154,245,1) 47%, rgba(129,227,252,1) 100%);
+}
+

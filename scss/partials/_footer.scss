@@ -1,19 +1,19 @@
+@import "../variables/variables";
+@import "../sass2/extend";
+@import "../sass2/maps";
+@import "../sass2/mixins";
+
 footer {
     margin-top: 50px;
     p{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: center;
-        font-family: 'PT Sans', sans-serif;
+        @include flex-centrar;
+        @extend .header-footer;
         grid-area: pie-de-pagina;
-        color: black;
         &:hover{color: whitesmoke;}
     }
     a{
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
     }
 .facebook-logo{
     justify-content: flex-end;
