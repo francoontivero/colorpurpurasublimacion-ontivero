@@ -9,21 +9,23 @@
 /* Background general de sitio */
 body{
     background: rgb(255,255,255);
-    background: linear-gradient(180deg, rgba(255,255,255,1) 21%, rgba(179,179,179,1) 64%, rgba(0,0,0,1) 100%);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 16%, rgba(201,201,201,1) 46%, rgba(158,157,157,1) 68%, rgba(94,93,93,1) 87%, rgba(52,52,52,1) 96%, rgba(0,0,0,1) 100%);
 }
 /* Index */
 .grid-container-index{
     display: grid;
-    display: flex;
     flex-wrap: wrap;
-    grid-template-columns: (3, 100%);
-    grid-template-rows: (1, 100%);
-    grid-template-areas: "producto1 logocentral producto2"
+    grid-template-columns: (3, 30%);
+    grid-template-rows: (4, 100%);
+    grid-template-areas:
+    "producto1 logocentral producto2"
+    "producto3 logocentral producto4"
+    "producto5 logocentral producto6"
+    "producto7 logocentral producto8";
 }
 .producto1{
     @include animacion-producto;
     grid-area: producto1;
-    margin: 65px;
     @include flex-producto;
 }
 #logocentral{
@@ -34,7 +36,6 @@ body{
     grid-area: logocentral;
     margin: 130px;
     @include flex-producto;
-    position: sticky;
 }
 @keyframes animacionlogo{
     0%{
@@ -48,18 +49,50 @@ body{
     grid-area: producto2;
     @include flex-producto;
 }
+.producto3{
+    @include animacion-producto;
+    grid-area: producto3;
+    @include flex-producto;
+}
+.producto4{
+    @include animacion-producto;
+    grid-area: producto4;
+    @include flex-producto;
+}
+.producto5{
+    @include animacion-producto;
+    grid-area: producto5;
+    @include flex-producto;
+}
+.producto6{
+    @include animacion-producto;
+    grid-area: producto6;
+    @include flex-producto;
+}
+.producto7{
+    @include animacion-producto;
+    grid-area: producto7;
+    @include flex-producto;
+}
+.producto8{
+    @include animacion-producto;
+    grid-area: producto8;
+    @include flex-producto;
+}
 .nombreproducto-precio{
-    color: mag-get($texto, color);
+    color: mag-get($texto, color1);
     font-family: map-get($texto, letra1);
     font-size: map-get($texto, sizepc);
-    margin-bottom: 20px;
-    padding: 15px;
+    margin-bottom: 10px;
+    padding: 5px;
     text-align: $alinear-al-centro;
 }
 /* Página - Productos */
 .titulo-productos{
+    @include animacion-producto;
     text-align: map-get($texto, centro);
     font-family: map-get($texto, letra2);
+    color: map-get($texto, color2);
     margin: 50px 15px 15px 15px;
     font-size: 50px;
 }
@@ -73,31 +106,37 @@ body{
     border: groove black;
     text-align: map-get($texto, centro);
     font-family: map-get($texto, letra1);
-    color: map-get($texto, color);
-    margin: 50px 20px 50px 20px;
+    color: map-get($texto, color1);
+    margin: 50px;
     padding: 30px;
 }
 /* Página - Diseños */
-.texto-generico-disenos{
-    @include animacion-aparecer;
+.titulo-disenos{
+    @include animacion-aparecer;   
     @include flex-centrar;
-    flex-direction: column;
-    flex-wrap: wrap;
-    background-image: url(../resources/merch.png);
-    width: 800px;
-    height: 430px;
-    background-position-y: bottom;
-    margin: 300px; 
-    font-size: 50px;
     font-family: map-get($texto, letra2);
-    text-align: map-get($texto, centro);
+    font-size: 50px;
+    color: map-get($texto, color2);
+}
+.texto-disenos{
+    @include animacion-producto;
+    font-family: map-get($texto, letra1);
+}
+#galeria img{
+    @include animacion-producto;
+    width: 100%;
+    height: 100%;
+}
+#galeria .col-lg-4{
+    padding: 25px;
+    margin: 0 !important;
+}
+#galeria img:hover{
+    border: 2px whitesmoke solid;
 }
 /* Página - Nosotros */
 .conocenos{
-    animation: fadeInDownBig;
-    animation-duration: 1s;
-    animation-iteration-count: initial;
-    animation-delay: 0s;
+    @include animacion-aparecer-abajo;
     @include background-gradiente;
     margin: 100px;
     border: outset 1px #5b5480;
@@ -107,13 +146,22 @@ body{
 .conocenos-titulo{
     text-align: map-get($texto, centro);
     font-family: map-get($texto, letra2);
+    color: map-get($texto, color2);
     margin: 50px 15px 15px 15px;
     font-size: 50px;
 }
 .conocenos-p{
     text-align: map-get($texto, centro);
     font-family: map-get($texto, letra1);
+    color: map-get($texto, color1);
     margin: 50px 70px;
+}
+
+.como-comprar-p-vinculo{
+    text-decoration: none;
+    &:hover{color: rgb(25, 170, 151);}
+    color: map-get($texto, color1);
+    font-family: map-get($texto, letra1);
 }
 
 /* Página - Contacto */
@@ -129,6 +177,7 @@ body{
     margin: 50px 15px 15px 15px;
     font-size: 50px;
     font-family: map-get($texto, letra2);
+    color: map-get($texto, color2);
 }
 form {
     @include animacion-aparecer;
@@ -141,8 +190,8 @@ form {
 .grid-container-footer{
     display: grid;
     flex-wrap: nowrap;
-    grid-template-columns: (2, 100%);
-    grid-template-rows: (3, 30%);
+    grid-template-columns: (3, 100%);
+    grid-template-rows: (2, 30%);
     grid-template-areas: 
     "pie-de-pagina pie-de-pagina pie-de-pagina"
     "facebook-logo instagram-logo whatsapp-logo";
@@ -161,11 +210,17 @@ form {
         display: grid;
         flex-wrap: wrap;
         grid-template-columns: (1, 50%);
-        grid-template-rows: (3, 100%);
+        grid-template-rows: (9, 100%);
         grid-template-areas: 
         "logocentral"
         "producto1"
         "producto2"
+        "producto3"
+        "producto4"
+        "producto5"
+        "producto6"
+        "producto7"
+        "producto8";
     }
     .producto1{
         @include animacion-producto;
@@ -181,7 +236,6 @@ form {
         grid-area: logocentral;
         margin: 30px;
         @include flex-producto;
-        position: sticky;
     }
     @keyframes animacionlogo{
         0%{
@@ -195,12 +249,42 @@ form {
         grid-area: producto2;
         @include flex-producto;
     }
+    .producto3{
+        @include animacion-producto;
+        grid-area: producto3;
+        @include flex-producto;
+    }
+    .producto4{
+        @include animacion-producto;
+        grid-area: producto4;
+        @include flex-producto;
+    }
+    .producto5{
+        @include animacion-producto;
+        grid-area: producto5;
+        @include flex-producto;
+    }
+    .producto6{
+        @include animacion-producto;
+        grid-area: producto6;
+        @include flex-producto;
+    }
+    .producto7{
+        @include animacion-producto;
+        grid-area: producto7;
+        @include flex-producto;
+    }
+    .producto8{
+        @include animacion-producto;
+        grid-area: producto8;
+        @include flex-producto;
+    }
     .nombreproducto-precio{
         color: mag-get($texto, color);
         font-family: map-get($texto, letra1);
         font-size: map-get($texto, sizepc);
-        margin-bottom: 20px;
-        padding: 15px;
+        margin-bottom: 10px;
+        padding: 5px;
         text-align: $alinear-al-centro;
     }
     /* Página - Productos */
@@ -225,26 +309,20 @@ form {
         padding: 20px;
     }
     /* Página - Diseños */
-    .texto-generico-disenos{
-        @include animacion-aparecer;
+    .titulo-disenos{
+        @include animacion-aparecer;   
         @include flex-centrar;
-        flex-direction: column;
-        flex-wrap: wrap;
-        background-image: url(../resources/merch.png);
-        width: 360px;
-        height: 780px;
-        background-position-y: bottom;
-        margin: 23px; 
-        font-size: 50px;
         font-family: map-get($texto, letra2);
-        text-align: map-get($texto, centro);
+        font-size: 40px;
+        color: map-get($texto, color2);
+    }
+    .texto-disenos{
+        @include animacion-producto;
+        font-family: map-get($texto, letra1);
     }
     /* Página - Nosotros */
     .conocenos{
-        animation: fadeInDownBig;
-        animation-duration: 1s;
-        animation-iteration-count: initial;
-        animation-delay: 0s;
+        @include animacion-aparecer-abajo;
         @include background-gradiente;
         margin: 50px 20px 50px 20px;
         padding: 50px;

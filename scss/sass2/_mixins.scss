@@ -8,9 +8,10 @@
 @mixin flex-producto{
     display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    margin-top: 30px;
 }
 
 @mixin animacion-producto{
@@ -23,6 +24,13 @@
 @mixin animacion-aparecer{
     animation: fadeIn;
     animation-duration: 2s;
+    animation-iteration-count: initial;
+    animation-delay: 0s;
+}
+
+@mixin animacion-aparecer-abajo {
+    animation: fadeInDownBig;
+    animation-duration: 1s;
     animation-iteration-count: initial;
     animation-delay: 0s;
 }
